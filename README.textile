@@ -1,0 +1,5 @@
+h1. Wait Me
+
+Wait Me: a maintenance theme for Textpattern CMS
+
+!https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/wait-me_textpattern-theme.png!
