@@ -1,9 +1,13 @@
 h1. Wait Me
 
-Wait Me: a maintenance theme for Textpattern CMS
+*Wait Me*: a maintenance theme for Textpattern CMS.
 
 !https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/wait-me_textpattern-theme.png!
 
-Fine handcrafted theme for your maintenance mode during your website development. Includes specific headers to search engine bots in order to differ indexations in later revisits. Minimal design with an extremly subtile colored shadows around the custom picture (extracted from the image itself); additional text, social network links and contact links governed by TXP variables for immediat use. No javascript, no dependencies, Responsive with Flexbox inside for modern browsers and IE7 minimum capable!
+p{text-align:right;font-size:small}. _Illustration: courtesy (C) Chu Son (@sonctw), Unsplash.com_.
 
-In development: this theme will be available in the next few days.
+p. Fine handcrafted theme for your maintenance mode during your website development. Includes specific headers to search engine bots in order to differ indexations in later revisits. Minimal design with extremly subtile colored shadows around the custom picture (extracted from the image itself); additional text, social network links and contact links governed by TXP variables for immediat use. No javascript, no dependencies, Responsive with Flexbox inside for modern browsers and IE7 minimum capable!
+
+p. In development: this theme will be available in the next few days.
+
+
