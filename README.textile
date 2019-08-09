@@ -4,10 +4,16 @@ h1. Wait Me
 
 !https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/wait-me_textpattern-theme.png!
 
-p{text-align:right;font-size:small}. _Illustration: courtesy (C) Chu Son (@sonctw), Unsplash.com_.
+p{width:100%;text-align:right;font-size:small}. _Illustration: courtesy (C) Chu Son (@sonctw), Unsplash.com_.
 
 p. Fine handcrafted theme for your maintenance mode during your website development. Includes specific headers to search engine bots in order to differ indexations in later revisits. Minimal design with extremly subtile colored shadows around the custom picture (extracted from the image itself); additional text, social network links and contact links governed by TXP variables for immediat use. No javascript, no dependencies, Responsive with Flexbox inside for modern browsers and IE7 minimum capable!
 
-p. In development: this theme will be available in the next few days.
+h2. How to?
+
+p. Unzip the distribution and place the theme folder into your @/root/themes@ directory.
+
+p. Upload an image named 0.jpg in your @/root/images@ directory (dimensions: 350 × 500 px).
+
+p. The theme use only 2 pages: "default" and "error_default" where you could find some TXP variables to set accordingly to your needs. Finaly, activate it.
 
 
