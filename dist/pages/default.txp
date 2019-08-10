@@ -98,7 +98,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: '-apple-system',system-ui,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-	font-kerning:normal;-moz-font-feature-settings:"kern";-webkit-font-feature-settings:"kern";font-feature-settings:"kern"
+	font-kerning:normal;-moz-font-feature-settings:"kern";-webkit-font-feature-settings:"kern";font-feature-settings:"kern";
 	scroll-behavior: smooth
 }
 
@@ -131,7 +131,7 @@ button,
 	padding: .2em .5em .4em;
 	background: #322fd0;
 	border: 0;
-	border:1px solid rgba(27, 31, 35, 0.2);
+	border: 1px solid rgba(27, 31, 35, 0.2);
 	color: #fff;
 	line-height: 1.6;
 	border-radius: 4px
@@ -149,14 +149,14 @@ button::-moz-focus-inner,
 	margin: 5% auto 2em auto;
 	*margin: 2em auto 2em auto;
 	border: 1px solid #eee;
-	border: 0px solid rgba(255, 255, 255, 0);
+	border: 0 solid rgba(255, 255, 255, 0);
 	background: #fff;
 	/* For IE 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#dddddd')";
 	/* For IE 5.5 - 7 */
 	*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#dddddd');
 
-	-webkit-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
 	-o-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
 	box-shadow: 0 0 50px rgba(0, 0, 0, .5);
@@ -188,7 +188,7 @@ button::-moz-focus-inner,
 	overflow: hidden;
 	display: block;
 	position: absolute;
-	z-index: 30;
+	z-index: 3;
 	top: -2.5%;
 	left: -2.5%;
 	width: 105%;
@@ -200,6 +200,7 @@ button::-moz-focus-inner,
 .section {
 	overflow-y: auto;
 	position: relative;
+	z-index: 5;
 	*display: inline;
 	display: inline-block;
 	float: left;
@@ -267,7 +268,7 @@ button::-moz-focus-inner,
 		background-position: right center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-webkit-filter: blur(20px) opacity(.8);
+		-webkit-filter: blur(20px) opacity(0.8);
 		filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur");
 		filter: blur(10px) opacity(.8)
 	}
@@ -307,7 +308,7 @@ button::-moz-focus-inner,
 		-moz-box-flex: 1;
 		flex-grow: 1;
 
-		box-shadow: 15px 25px 25px -5px rgba(0, 0, 0,.11), 13px -15px 25px 0px rgba(0, 0, 0,.11)
+		box-shadow: 15px 25px 25px -5px rgba(0, 0, 0, .11), 13px -15px 25px 0px rgba(0, 0, 0, .11)
 	}
 
 	.aside img {
@@ -328,7 +329,7 @@ button::-moz-focus-inner,
 /*! Just because Safari Mac is ugly */
 @media not all and (min-resolution:.001dpcm) { @media {
 
-	html .aside .mask {background: transparent;-webkit-filter: blur(0px);filter: blur(0px)}
+	html .aside .mask {background: transparent; -webkit-filter: blur(0px); filter: blur(0px)}
 }}
 
 h1, h2, h3 {font-family: 'Abril Fatface', serif}
@@ -358,7 +359,7 @@ h2 {
 @media only screen and (max-width: 575px) {
 
 	html .aside {display: none}
-	.section {width: 100%; box-shadow: -5px 4px 25px rgba(0,0,0,.11)}
+	.section {width: 100%; box-shadow: -5px 4px 25px rgba(0, 0, 0, .11)}
 	html h1 {letter-spacing: 0}
 
 }
