@@ -27,23 +27,57 @@ The main text of your page:
 
 <txp:variable name="text" value="We're working hard on this new website but all isn't finished yet. Please, renew your visit later." />
 
+<txp:hide>
+Text before the contact link:
+</txp:hide>
+
+<txp:variable name="prefix-contact" value="Keep in touch" />
+
+<txp:hide>
+Text in the contact link:
+</txp:hide>
+
+<txp:variable name="contact" value="Contact us" />
+
+<txp:hide>
+Do not change anything below
+</txp:hide>
+
 
 <txp:header name="HTTP/1.1 503 Service Temporarily Unavailable" />
 <txp:header name="Status" value="503 Service Temporarily Unavailable" />
 <txp:header name="Retry-After: 3600" /><!DOCTYPE html>
-<html class="no-js" lang="en" dir="ltr">
+<html class="no-js" lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 <title><txp:site_name /> - Maintenance Mode</title>
 <meta name="robots" content="none">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ffffff">
 <meta name="generator" content="Textpattern CMS">
+<link rel="canonical" href="<txp:site_url />">
 <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
 
 <script>var arr=['article','aside','footer','header','nav','section','figcaption','figure','main','template'];for(var i=0;i<arr.length;i++) document.createElement(arr[i]);</script>
 
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
 <style>
 @charset "UTF-8";
+
+/*! abril-fatface-regular - latin */
+@font-face {
+font-family: 'Abril Fatface';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: local('Abril Fatface'), local('AbrilFatface-Regular'),
+     url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2') format('woff2'),
+     url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmiw.woff') format('woff')
+}
+
 *,
 *:before,
 *:after {
@@ -61,6 +95,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: '-apple-system',system-ui,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+	font-kerning:normal;-moz-font-feature-settings:"kern";-webkit-font-feature-settings:"kern";font-feature-settings:"kern"
 	scroll-behavior: smooth
 }
 
@@ -78,6 +113,8 @@ img {
 html .table {display: table;table-layout: fixed}
 .table-cell {display: table-cell}
 
+a {color: #333}
+
 button,
 .button {
 	display: inline-table;
@@ -88,13 +125,13 @@ button,
 
 button,
 .button {
-	padding: .2em .5em;
+	padding: .2em .5em .4em;
 	background: #322fd0;
 	border: 0;
 	border:1px solid rgba(27, 31, 35, 0.2);
 	color: #fff;
-	line-height: 200% !important;
-	border-radius:.25em
+	line-height: 1.6;
+	border-radius: 4px
 }
 
 button::-moz-focus-inner,
@@ -134,8 +171,8 @@ button::-moz-focus-inner,
 	width: 30%;
 	min-width: 30%;
 	height: 100%;
-	background-image:url(images/0.jpg);
-	background-position: center;
+	background-image:url(images/0.png);
+	background-position: right center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-user-select: none;
@@ -158,7 +195,7 @@ button::-moz-focus-inner,
 }
 
 .section {
-	overflow: hidden;
+	overflow-y: auto;
 	position: relative;
 	*display: inline;
 	display: inline-block;
@@ -167,7 +204,9 @@ button::-moz-focus-inner,
 	*width: 68%;
 	height: 100%;
 	padding: 0;
-	background: #fff
+	background: #fff;
+	scrollbar-color: #ccc #eee;
+	scrollbar-width: thin
 }
 
 .aside img {
@@ -202,31 +241,9 @@ button::-moz-focus-inner,
 	vertical-align: middle
 }
 
-/*!
- * CSS Hack for IE7/6
- * can be removed safely
- * if you don't need it
- */
-.section {
-*overflow-y: auto;
-*width: 69.9%;
-*height: 89%;
-*padding: 3.7% 0
-}
-
-.section .content {
-*display: block;
-*position: absolute;
-*top: 50%;
-*width: 99.9%;
-*height: auto;
-*margin-top: expression(-this.offsetHeight/2)
-}
-/* End Hack */
-
 .footer {
 	float: left;
-	width: 100%
+	width: 92%
 }
 
 /*! For Edge 12; FF22; Chrome 28; Safari 9; Opera 12 minimum only */
@@ -243,8 +260,8 @@ button::-moz-focus-inner,
 
 	.aside .mask {
 		z-index: -1;
-		background-image:url(images/0.jpg);
-		background-position: center;
+		background-image:url(images/0.png);
+		background-position: right center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		-webkit-filter: blur(20px);;
@@ -305,7 +322,13 @@ button::-moz-focus-inner,
 
 }
 
-h1, h2, h3 {font-family: 'Abril Fatface', sans-serif}
+/*! Just because Safari Mac is ugly */
+@media not all and (min-resolution:.001dpcm) { @media {
+
+	html .aside .mask {background: transparent;-webkit-filter: blur(0px);filter: blur(0px)}
+}}
+
+h1, h2, h3 {font-family: 'Abril Fatface', serif}
 
 h1 {
 	letter-spacing: -1px;
@@ -336,9 +359,215 @@ h2 {
 }
 
 
-</style>
+body .modal-dialog{font:normal normal normal 16px/1 Arial,"Helvetica Neue",Helvetica,sans-serif}
+@-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}
+.modal-dialog:target {
+opacity:1;
+display:block;
+cursor:zoom-out;
+pointer-events:auto
+}
+.modal-dialog:target .modal {
+opacity:1;
+-webkit-animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both;
+animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both
+}
+html .modal-dialog:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {
+overflow:auto;
+position:absolute;
+z-index:-1;
+top:0;
+left:0;
+height:1px;
+margin:0;
+padding:0
+}
+#close:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {position:static}
+.modal-dialog {
+display:none;
+opacity:0;
+position:absolute;
+position:fixed;
+z-index:99999;
+top:0;
+right:0;
+bottom:0;
+left:0;
+height:0;
+background:inherit
+}
+@supports(display:flex) {html .modal-dialog:target ~ .wrapper {overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;height:100vh}.modal-dialog {height:auto;background:#fff;transition:opacity 300ms ease}
+}
+html .modal-dialog.no--bg:target ~ .wrapper {height:0}
+.modal-dialog .modal {
+overflow:hidden;
+overflow:-moz-hidden-unscrollable;
+position:relative;
+z-index:1000;
+width:98%;
+max-width:36em;
+min-width:250px;
+margin:1.5% auto;
+margin:5vh auto;
+background:inherit!important;
+border:1px solid #eee;
+font-size:100%;
+-webkit-box-shadow:0 0 10px rgba(0,0,0,.3);
+-moz-box-shadow:0 0 30px rgba(0,0,0,.3);
+-o-box-shadow:0 0 10px rgba(0,0,0,.3);
+-khtml-box-shadow:0 0 10px rgba(0,0,0,.3);
+-ms-box-shadow:0 0 10px rgba(0,0,0,.3);
+box-shadow:0 -10px 17px rgba(0,0,0,.05),0 15px 17px rgba(0,0,0,.05),10px 5px 17px rgba(0,0,0,.05);
+-webkit-transform:translate3d(0,0,0);
+-moz-transform:translate3d(0,0,0);
+-ms-transform:translate3d(0,0,0);
+transform:translate3d(0,0,0);
+*zoom:1
+}
+.modal-dialog:target {outline:none}
+.modal-dialog .close-span {
+float:right;
+position:relative;
+top:1.2em;
+right:0;
+margin:0 3em 0 0;
+color:inherit;
+font-size:smaller;
+font-weight:300
+}
+.modal-dialog .close {
+box-sizing:content-box;
+display:block;
+position:absolute;
+z-index:10000;
+top:-.3em;
+right:-2em;
+width:1.5em;
+height:1.5em;
+margin:0;
+padding:0;
+border:2px solid currentcolor;
+vertical-align:middle;
+align-self:center;
+text-align:center;
+text-decoration:none;
+line-height:1.5em
+}
+.modal-dialog .close strong {
+display:block;
+width:1.5em;
+height:1.5em;
+margin:0;
+padding:0;
+vertical-align:middle;
+line-height:1.5em;
+font-weight:400;
+cursor:pointer
+}
+.modal-dialog .close:hover,
+.inner-dialog .close:active {
+outline:none;
+border-color:transparent;
+-webkit-tap-highlight-color:transparent
+}
+.modal-dialog .close b {
+display:block;
+overflow:hidden;
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+width:100%;
+margin:0;
+padding:0;
+vertical-align:middle;
+text-align:center;
+font-size:100%;
+cursor:pointer;
+-webkit-animation:1s ease-in-out;
+-moz-animation:1s ease-in-out;
+animation:1s ease-in-out
+}
+.modal-dialog .close b:hover,
+.modal-dialog .close:hover svg {
+-webkit-transform:scale(2,2);
+-moz-transform:scale(2,2);
+transform:scale(2,2)
+}
+.modal-dialog .header-modal {
+position:relative;
+z-index:1001;
+display:block;
+width:100%;
+height:4em;
+min-height:4rem;
+max-height:26vh;
+color:inherit;
+font-family:Arial,'Noto Sans',sans-serif;
+font-weight:300
+}
+.header-modal strong {
+display:block;
+float:left;
+width:90%;
+margin:1em 5% 0;
+text-align:center;
+letter-spacing:-1px;
+text-transform:capitalize;
+line-height:1;
+font-size:110%;
+font-weight:400
+}
+.modal-dialog .inner-dialog {
+overflow-y:auto;
+display:block;
+width:auto;
+max-height:14em;
+max-height:47vh;
+height:99%;
+margin:0;
+padding:5px 15px 30px 20px;
+color:inherit;
+-webkit-overflow-scrolling:touch
+}
+.modal-dialog .inner-dialog p {
+margin-top:2em;
+text-align:center;
+font-size:85%;
+line-height:1.5;
+-webkit-hyphens:auto;
+-moz-hyphens:auto;
+-ms-hyphens:auto;
+hyphens:auto
+}
+.modal-dialog .inner-dialog p a {
+display:inline-table;
+width:48px;
+height:auto;
+margin:1em .5em 1em;
+padding:.5em;
+background:inherit;
+border:2px solid #f0f8ff
+}
+@media only screen and (max-width:520px),only screen and (max-height:350px) {
+.modal-dialog:target {height:calc(100vh + 10vh + 70px)}
+.modal-dialog {position:absolute}
+}
+@media only screen and (max-width:720px) {
+.modal-dialog .modal {width:80%}
+.header-modal {max-height:11vmax}
+.header-modal h3 {font-size:80%;line-height:1}
+html .header-modal span {width:auto;margin:0}
+.header-modal a {float:none;width:24px;height:24px;margin:0 0 0 .5em;vertical-align:middle}
+.header-modal svg {width:22px;height:22px;vertical-align:baseline}
+.modal-dialog .modal {margin:5vh auto;margin:calc(15vh - 40px) auto;margin:5vmin auto}
+}
+:-o-prefocus,
+html .modal-dialog .inner-dialog {height:100%;max-height:100%}
 
-<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+</style>
 
 </head>
 <body>
@@ -346,10 +575,8 @@ h2 {
 <div class="wrapper">
 
 	<div class="aside">
-
 		<span class="mask"></span>
 		<div class="overlay"></div>
-
 	</div>
 
 	<div class="section">
@@ -359,6 +586,7 @@ h2 {
 
 				<h1><txp:variable name="title" /></h1>
 				<p><txp:variable name="text" /></p>
+				<p><txp:variable name="prefix-contact" /> <a href="#openContact" aria-label="contact" class="button" onclick="document.getElementById('openContact').style.display='block';return true;" aria-haspopup="true"><txp:variable name="contact" /></a></p>
 
 				<footer class="footer">
 <span class="socials">&copy; <txp:php>
@@ -379,5 +607,22 @@ echo( ((int)$first < (int)$now ? $first.'-'.$now : $now) );
 	</div>
 
 </div>
+
+<txp:php>
+/**
+ * Simple email address obfuscator
+ */
+function _encode_email($e) {
+	for ($i = 0; $i < strlen($e); $i++) {
+		$output .= '&#'.ord($e[$i]).';';
+	}
+	return $output;
+}
+</txp:php>
+<txp:authors group="publisher, managing_editor" break="" limt="1">
+<txp:variable name="email_encoded" value='<txp:php> echo _encode_email(author_email(array())); </txp:php>' />
+</txp:authors>
+
+<div role="dialog" aria-modal="true" aria-haspopup="true" aria-label="Dialog Window - Close (Press escape to close)" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openContact" onclick="document.getElementById('openContact').style.display='none';return true;" hidden><div role="document" class="modal no-select"><span class="close-span"><strong>Close</strong> <a rel="noopener noreferrer" href="#close-modal?javascript:void(0);" role="button" aria-hidden="true" aria-label="Close (Press escape to close)" class="close" id="close-modal" onclick="document.getElementById('openContact').style.display='none';return true;"><svg aria-hidden="true" aria-labelledby="close-share" width="20" height="20" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="vertical-align:top"><switch><g><title id="close-share">Close</title><path d="m15.125 12.281l-2.8438 2.8438 9.9375 9.875-9.9375 9.875 2.8438 2.8438 9.9375-9.875 9.9375 9.875 2.8125-2.8438-9.9062-9.875 9.9062-9.875-2.8125-2.8438-9.9375 9.875z" fill="currentColor"></path></g><foreignObject width="0" height="0"><b>×</b></foreignObject></switch></svg></a></span> <div class="header-modal"><strong class="no-select" id="dialog-description">Compose new email<b class="colon">:</b></strong></div> <div class="inner-dialog" role="document"><p class="txt-c"> <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=<txp:variable name="email_encoded" />&amp;su=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Gmail" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><switch><g><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></g><foreignObject width="0" height="0" overflow="hidden">Gmail</foreignObject></switch></svg> Gmail</a> <a href="https://outlook.office.com/owa/?path=/mail/action/compose&amp;to=<txp:variable name="email_encoded" />&amp;subject=&amp;body=" class="tooltip" target="_blank" data-tooltip="Outlook" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><switch><g><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></g><foreignObject width="0" height="0" overflow="hidden">Outlook</foreignObject></switch></svg> Outlook</a> <a href="mailto:<txp:variable name="email_encoded" />?subject=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Default" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><switch><g><path d="M5.564 2.703l3.45 3.734-2.434 4.798 5.14-.921 2.34 5.646L24 2.926 5.564 2.703zm-.636 8.088l.957-.787-1.234.39-.126-.18.51-.495-.669.27C1.813 10.979 0 13.455 0 16.35c0 1.951.822 3.705 2.133 4.947-.563-.99-.885-2.134-.885-3.355 0-2.865 1.809-5.415 4.315-6.42l.315-.766-.75.331-.211-.285.011-.011zm4.364-1.97L10.89 6l9.398-2.201L9.292 8.821z" fill="currentColor"></path></g><foreignObject width="0" height="0" overflow="hidden">Email</foreignObject></switch></svg> Default</a></p></div>  </div>  </div>
 
 </body></html>

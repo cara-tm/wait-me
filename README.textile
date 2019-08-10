@@ -16,4 +16,6 @@ p. Upload an image named 0.jpg in your @/root/images@ directory (dimensions: 350
 
 p. The theme use only 2 pages: "default" and "error_default" where you could find some TXP variables to set accordingly to your needs. Finaly, activate it.
 
+p. *Note*: the email address for the contact feature is grabbed from the one set as the administrator of your website.
+
 
