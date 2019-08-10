@@ -74,8 +74,11 @@ font-style: normal;
 font-weight: 400;
 font-display: swap;
 src: local('Abril Fatface'), local('AbrilFatface-Regular'),
-     url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2') format('woff2'),
-     url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmiw.woff') format('woff')
+	url('https://fonts.gstatic.com/s/abhayalibre/v5/e3tmeuGtX-Co5MNzeAOqinEQfEnT.eot?#iefix') format('embedded-opentype'),
+	url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2') format('woff2'),
+	url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmiw.woff') format('woff'),
+	url('https://fonts.gstatic.com/s/abhayalibre/v5/e3tmeuGtX-Co5MNzeAOqinEQfEnS.ttf')  format('truetype'),
+	url('https://fonts.gstatic.com/l/font?kit=e3tmeuGtX-Co5MNzeAOqinEQfEnQ&skey=4aba808beb02377b&v=v5#AbhayaLibre') format('svg');
 }
 
 *,
@@ -264,9 +267,9 @@ button::-moz-focus-inner,
 		background-position: right center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-webkit-filter: blur(20px);;
+		-webkit-filter: blur(20px) opacity(.8);
 		filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur");
-		filter: blur(10px)
+		filter: blur(10px) opacity(.8)
 	}
 
 	.aside .overlay {
