@@ -1,4 +1,10 @@
 <txp:hide>
+Your image extension for the file "0":
+</txp:hide>
+
+<txp:variable name="img-ext" value="png" />
+
+<txp:hide>
 A list of social network names to use (lowercases, no comma separated, a space instead; remove all and replace by 2 spaces to hide the social link):
 </txp:hide>
 
@@ -10,9 +16,9 @@ And the corresponding social accounts (no comma separated, a space instead):
 
 <txp:variable name="twitter_account" value="https://twitter.com/lowel" />
 <txp:variable name="instagram_account" value="https://instagram.com/rodinature" />
-<txp:variable name="facebook_account" value="https://facebook.com/zuck" />
-<txp:variable name="dribbble_account" value="https://dribbble.com/" />
-<txp:variable name="github_account" value="https://github.com/textpattern" />
+<txp:variable name="facebook_account" value="https://www.fb.com/zuck" />
+<txp:variable name="dribbble_account" value="https://dribbble.com" />
+<txp:variable name="github_account" value="https://github.com/cara-tm/wait-me" />
 <txp:variable name="youtube_account" value="https://youtu.be/zpurVcrhY30" />
 
 <txp:hide>
@@ -59,10 +65,36 @@ Do not change anything below
 <meta name="generator" content="Textpattern CMS">
 <link rel="canonical" href="<txp:site_url />">
 <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
-
 <script>var arr=['article','aside','footer','header','nav','section','figcaption','figure','main','template'];for(var i=0;i<arr.length;i++) document.createElement(arr[i]);</script>
-
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+<!--
+
+ _____ _     _       _                              
+|_   _| |   (_)     (_)                             
+  | | | |__  _ ___   _ ___                          
+  | | | '_ \| / __| | / __|                         
+  | | | | | | \__ \ | \__ \                         
+  \_/ |_| |_|_|___/ |_|___/                         
+                                                    
+                                                    
+ _    _       _ _    ___  ___                       
+| |  | |     (_) |   |  \/  |                       
+| |  | | __ _ _| |_  |      | ___                   
+| |/\| |/ _` | | __| | |\/| |/ _ \                  
+\  /\  / (_| | | |_  | |  | |  __/                  
+ \/  \/ \__,_|_|\__| \_|  |_/\___|                  
+                                                    
+                                                    
+ _______   ________   _   _                         
+|_   _\ \ / /| ___ \ | | | |                        
+  | |  \ ` / | |_/ / | |_| |__   ___ _ __ ___   ___ 
+  | |  /   \ |  __/  | __| '_ \ / _ \ '_ ` _ \ / _ \
+  | | / /^\ \| |     | |_| | | |  __/ | | | | |  __/
+  \_/ \/   \/\_|      \__|_| |_|\___|_| |_| |_|\___|
+                                                    
+                                                                                                                    
+-->
 
 <style>
 @charset "UTF-8";
@@ -102,9 +134,9 @@ body {
 	scroll-behavior: smooth
 }
 
-
 img {
 	display: block;
+	width: 100%;
 	height: auto;
 	margin: 0;
 	padding: 0;
@@ -113,7 +145,7 @@ img {
 	-ms-interpolation-mode: bicubic
 }
 
-html .table {display: table;table-layout: fixed}
+html .table {display: table}
 .table-cell {display: table-cell}
 
 a {color: #333}
@@ -131,10 +163,10 @@ button,
 	padding: .2em .5em .4em;
 	background: #322fd0;
 	border: 0;
-	border: 1px solid rgba(27, 31, 35, 0.2);
+	border:1px solid rgba(27, 31, 35, 0.2);
 	color: #fff;
 	line-height: 1.6;
-	border-radius: 4px
+	border-radius: 3px
 }
 
 button::-moz-focus-inner,
@@ -145,11 +177,11 @@ button::-moz-focus-inner,
 	top: 0;
 	width: 90%;
 	height: 500px;
-	max-width: 79em;
+	max-width: 95em;
 	margin: 5% auto 2em auto;
 	*margin: 2em auto 2em auto;
 	border: 1px solid #eee;
-	border: 0 solid rgba(255, 255, 255, 0);
+	border: 0px solid rgba(255, 255, 255, 0);
 	background: #fff;
 	/* For IE 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#dddddd')";
@@ -161,11 +193,14 @@ button::-moz-focus-inner,
 	-o-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
 	box-shadow: 0 0 50px rgba(0, 0, 0, .5);
 
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0)
+}
+
+@media screen and (min-width: 1439px) {
+
+	.wrapper {top: 9vh; margin-top: 0}
+
 }
 
 .aside {
@@ -174,7 +209,7 @@ button::-moz-focus-inner,
 	width: 30%;
 	min-width: 30%;
 	height: 100%;
-	background-image:url(images/0.png);
+	background-image:url(images/0.<txp:variable name="img-ext" />);
 	background-position: right center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -198,6 +233,7 @@ button::-moz-focus-inner,
 }
 
 .section {
+	overflow: hidden;
 	overflow-y: auto;
 	position: relative;
 	z-index: 5;
@@ -264,11 +300,11 @@ button::-moz-focus-inner,
 
 	.aside .mask {
 		z-index: -1;
-		background-image:url(images/0.png);
+		background-image:url(images/0.<txp:variable name="img-ext" />);
 		background-position: right center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-webkit-filter: blur(20px) opacity(0.8);
+		-webkit-filter: blur(20px) opacity(.8);
 		filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur");
 		filter: blur(10px) opacity(.8)
 	}
@@ -307,8 +343,7 @@ button::-moz-focus-inner,
 		-webkit-flex-grow: 1;
 		-moz-box-flex: 1;
 		flex-grow: 1;
-
-		box-shadow: 15px 25px 25px -5px rgba(0, 0, 0, .11), 13px -15px 25px 0px rgba(0, 0, 0, .11)
+		box-shadow: 15px 25px 25px -5px rgba(0, 0, 0,.11), 13px -15px 25px 0px rgba(0, 0, 0,.11)
 	}
 
 	.aside img {
@@ -322,33 +357,39 @@ button::-moz-focus-inner,
 		image-rendering: -moz-crisp-edges;
 		image-rendering: -o-crisp-edges;
 		image-rendering: pixelated
-		}
+	}
 
 }
 
 /*! Just because Safari Mac is ugly */
 @media not all and (min-resolution:.001dpcm) { @media {
 
-	html .aside .mask {background: transparent; -webkit-filter: blur(0px); filter: blur(0px)}
+	html .aside .mask {background: transparent;-webkit-filter: blur(0px);filter: blur(0px)}
 }}
 
 h1, h2, h3 {font-family: 'Abril Fatface', serif}
 
 h1 {
 	letter-spacing: -1px;
-	font-size: 6vh;
-	font-size: calc(7.96996px + 3.00375vw);
-	line-height: calc(9.95744px + 4.25532vw)
+	letter-spacing: -.075vmax;
+	font-size: 2.3em;
+	line-height: 1.2;
+	font-size: calc(24px + 1vw);
+	line-height: calc((24px + 1vw) * 1.2)
 }
 
 h2 {
 	margin: 0 0 1vw 0;
-	font-size: 2vw;
-	font-style: italic;
+	font-size: 2.175em;
+	line-height: 1.1;
+	line-height: calc((22px + 1vw) * 1.1);
+	font-size: calc(22px + 1vw);
 	font-weight: 400
 }
 
 .socials {display: block; margin: 2em 0}
+
+.socials a {vertical-align: text-bottom}
 
 .svg-icon {
 	margin: 0 .35em 0 0;
@@ -358,220 +399,14 @@ h2 {
 
 @media only screen and (max-width: 575px) {
 
+	html .wrapper {top: 0}
 	html .aside {display: none}
-	.section {width: 100%; box-shadow: -5px 4px 25px rgba(0, 0, 0, .11)}
+	.section {width: 100%; box-shadow: -5px 4px 25px rgba(0,0,0,.11)}
 	html h1 {letter-spacing: 0}
 
 }
 
-
-body .modal-dialog{font:normal normal normal 16px/1 Arial,"Helvetica Neue",Helvetica,sans-serif}
-@-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}
-.modal-dialog:target {
-opacity:1;
-display:block;
-cursor:zoom-out;
-pointer-events:auto
-}
-.modal-dialog:target .modal {
-opacity:1;
--webkit-animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both;
-animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both
-}
-html .modal-dialog:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {
-overflow:auto;
-position:absolute;
-z-index:-1;
-top:0;
-left:0;
-height:1px;
-margin:0;
-padding:0
-}
-#close:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {position:static}
-.modal-dialog {
-display:none;
-opacity:0;
-position:absolute;
-position:fixed;
-z-index:99999;
-top:0;
-right:0;
-bottom:0;
-left:0;
-height:0;
-background:#fff
-}
-@supports(display:flex) {html .modal-dialog:target ~ .wrapper {overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;height:100vh}.modal-dialog {height:auto;transition:opacity 300ms ease}
-}
-html .modal-dialog.no--bg:target ~ .wrapper {height:0}
-.modal-dialog .modal {
-overflow:hidden;
-overflow:-moz-hidden-unscrollable;
-position:relative;
-z-index:1000;
-width:98%;
-max-width:36em;
-min-width:250px;
-margin:1.5% auto;
-margin:5vh auto;
-background:#fff;
-border:1px solid #eee;
-font-size:100%;
--webkit-box-shadow:0 0 10px rgba(0,0,0,.3);
--moz-box-shadow:0 0 30px rgba(0,0,0,.3);
--o-box-shadow:0 0 10px rgba(0,0,0,.3);
--khtml-box-shadow:0 0 10px rgba(0,0,0,.3);
--ms-box-shadow:0 0 10px rgba(0,0,0,.3);
-box-shadow:0 -10px 17px rgba(0,0,0,.05),0 15px 17px rgba(0,0,0,.05),10px 5px 17px rgba(0,0,0,.05);
--webkit-transform:translate3d(0,0,0);
--moz-transform:translate3d(0,0,0);
--ms-transform:translate3d(0,0,0);
-transform:translate3d(0,0,0);
-*zoom:1
-}
-.modal-dialog:target {outline:none}
-.modal-dialog .close-span {
-float:right;
-position:relative;
-top:1.2em;
-right:0;
-margin:0 3em 0 0;
-color:inherit;
-font-size:smaller;
-font-weight:300
-}
-.modal-dialog .close {
-box-sizing:content-box;
-display:block;
-position:absolute;
-z-index:10000;
-top:-.3em;
-right:-2em;
-width:1.5em;
-height:1.5em;
-margin:0;
-padding:0;
-border:2px solid currentcolor;
-vertical-align:middle;
-align-self:center;
-text-align:center;
-text-decoration:none;
-line-height:1.5em
-}
-.modal-dialog .close strong {
-display:block;
-width:1.5em;
-height:1.5em;
-margin:0;
-padding:0;
-vertical-align:middle;
-line-height:1.5em;
-font-weight:400;
-cursor:pointer
-}
-.modal-dialog .close:hover,
-.inner-dialog .close:active {
-outline:none;
-border-color:transparent;
--webkit-tap-highlight-color:transparent
-}
-.modal-dialog .close b {
-display:block;
-overflow:hidden;
-position:absolute;
-top:0;
-right:0;
-bottom:0;
-left:0;
-width:100%;
-margin:0;
-padding:0;
-vertical-align:middle;
-text-align:center;
-font-size:100%;
-cursor:pointer;
--webkit-animation:1s ease-in-out;
--moz-animation:1s ease-in-out;
-animation:1s ease-in-out
-}
-.modal-dialog .close b:hover,
-.modal-dialog .close:hover svg {
--webkit-transform:scale(2,2);
--moz-transform:scale(2,2);
-transform:scale(2,2)
-}
-.modal-dialog .header-modal {
-position:relative;
-z-index:1001;
-display:block;
-width:100%;
-height:4em;
-min-height:4rem;
-max-height:26vh;
-color:inherit;
-font-family:Arial,'Noto Sans',sans-serif;
-font-weight:300
-}
-.header-modal strong {
-display:block;
-float:left;
-width:90%;
-margin:1em 5% 0;
-text-align:center;
-letter-spacing:-1px;
-text-transform:capitalize;
-line-height:1;
-font-size:110%;
-font-weight:400
-}
-.modal-dialog .inner-dialog {
-overflow-y:auto;
-display:block;
-width:auto;
-max-height:14em;
-max-height:47vh;
-height:99%;
-margin:0;
-padding:5px 15px 30px 20px;
-color:inherit;
--webkit-overflow-scrolling:touch
-}
-.modal-dialog .inner-dialog p {
-margin-top:2em;
-text-align:center;
-font-size:85%;
-line-height:1.5;
--webkit-hyphens:auto;
--moz-hyphens:auto;
--ms-hyphens:auto;
-hyphens:auto
-}
-.modal-dialog .inner-dialog p a {
-display:inline-table;
-width:48px;
-height:auto;
-margin:1em .5em 1em;
-padding:.5em;
-background:inherit;
-border:2px solid #f0f8ff
-}
-@media only screen and (max-width:520px),only screen and (max-height:350px) {
-.modal-dialog:target {height:calc(100vh + 10vh + 70px)}
-.modal-dialog {position:absolute}
-}
-@media only screen and (max-width:720px) {
-.modal-dialog .modal {width:80%}
-.header-modal {max-height:11vmax}
-.header-modal h3 {font-size:80%;line-height:1}
-html .header-modal span {width:auto;margin:0}
-.header-modal a {float:none;width:24px;height:24px;margin:0 0 0 .5em;vertical-align:middle}
-.header-modal svg {width:22px;height:22px;vertical-align:baseline}
-.modal-dialog .modal {margin:5vh auto;margin:calc(15vh - 40px) auto;margin:5vmin auto}
-}
-:-o-prefocus,
-html .modal-dialog .inner-dialog {height:100%;max-height:100%}
-
+body .modal-dialog{font:normal normal normal 16px/1 Arial,"Helvetica Neue",Helvetica,sans-serif}@-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}.modal-dialog:target {opacity:1;display:block;cursor:zoom-out;pointer-events:auto}.modal-dialog:target .modal {opacity:1;-webkit-animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both;animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both}html .modal-dialog:target ~ .wrapper,a[class^="close"]:target ~ .wrapper{overflow:auto;position:absolute;z-index:-1;top:0;left:0;height:1px;margin:0;padding:0}#close:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {position:static}.modal-dialog{display:none;opacity:0;position:absolute;position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;height:0;background:#fff}@supports(display:flex){html .modal-dialog:target ~ .wrapper{overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;height:100vh}.modal-dialog{height:auto;transition:opacity 300ms ease}}html .modal-dialog.no--bg:target ~ .wrapper{height:0}.modal-dialog .modal{overflow:hidden;overflow:-moz-hidden-unscrollable;position:relative;z-index:1000;width:98%;max-width:36em;min-width:250px;margin:1.5% auto;margin:5vh auto;background:#fff;border:1px solid transparent;border-color:hsl(0, 0%, 93.3%);font-size:100%;-webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);-moz-box-shadow:0 0 30px rgba(0,0,0,.3);-o-box-shadow:0 0 10px rgba(0,0,0,.3);-khtml-box-shadow:0 0 10px rgba(0,0,0,.3);-ms-box-shadow:0 0 10px rgba(0,0,0,.3);box-shadow:0 -10px 17px rgba(0,0,0,.05),0 15px 17px rgba(0,0,0,.05),10px 5px 17px rgba(0,0,0,.05);-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);*zoom:1}.modal-dialog:target {outline:none}.modal-dialog .close-span{float:right;position:relative;top:1.2em;right:0;margin:0 3em 0 0;color:inherit;font-size:smaller;font-weight:300}.modal-dialog .close{box-sizing:content-box;display:block;position:absolute;z-index:10000;top:-.3em;right:-2em;width:1.5em;height:1.5em;margin:0;padding:0;border:2px solid currentcolor;vertical-align:middle;align-self:center;text-align:center;text-decoration:none;line-height:1.5em}.modal-dialog .close strong{display:block;width:1.5em;height:1.5em;margin:0;padding:0;vertical-align:middle;line-height:1.5em;font-weight:400;cursor:pointer}.modal-dialog .close:hover,.inner-dialog .close:active{outline:none;border:none;-webkit-tap-highlight-color:transparent}.modal-dialog .close b{display:block;overflow:hidden;position:absolute;z-index: 10000;top:0;right:0;bottom:0;left:0;width:100%;margin:0;padding:0;vertical-align:middle;text-align:center;color: #333;font-size:100%;cursor:pointer;-webkit-animation:1s ease-in-out;-moz-animation:1s ease-in-out;animation:1s ease-in-out}.modal-dialog .close b:hover,.modal-dialog .close:hover svg{-webkit-transform:scale(2,2);-moz-transform:scale(2,2);transform:scale(2,2)}.modal-dialog .header-modal{position:relative;z-index:1001;display:block;width:100%;height:4em;min-height:4rem;max-height:26vh;color:inherit;font-family:Arial,'Noto Sans',sans-serif;font-weight:300}.header-modal strong{display:block;float:left;width:90%;margin:1em 5% 0;text-align:center;letter-spacing:-1px;text-transform:capitalize;line-height:1;font-size:110%;font-weight:400}.modal-dialog .inner-dialog{overflow-y:auto;display:block;width:auto;max-height:14em;max-height:47vh;height:99%;margin:0;padding:5px 15px 30px 20px;color:inherit;-webkit-overflow-scrolling:touch}.modal-dialog .inner-dialog p{margin-top:2em;text-align:center;font-size:85%;line-height:1.5;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}.modal-dialog .inner-dialog p a{display:inline-table;width:48px;height:auto;margin:1em .5em 1em;padding:.5em;background:inherit;border:2px solid #f0f8ff}@media only screen and (max-width:520px),only screen and (max-height:350px){.modal-dialog:target{height:calc(100vh + 10vh + 70px)}.modal-dialog{position:absolute}}@media only screen and (max-width:720px){.modal-dialog .modal {width:80%}.header-modal{max-height:11vmax}.header-modal h3{font-size:80%;line-height:1}html .header-modal span {width:auto;margin:0}.header-modal a{float:none;width:24px;height:24px;margin:0 0 0 .5em;vertical-align:middle}.header-modal svg{width:22px;height:22px;vertical-align:baseline}.modal-dialog .modal{margin:5vh auto;margin:calc(15vh - 40px) auto;margin:5vmin auto}}:-o-prefocus,html .modal-dialog .inner-dialog{height:100%;max-height:100%}
 
 </style>
 
@@ -599,7 +434,7 @@ html .modal-dialog .inner-dialog {height:100%;max-height:100%}
 $first = date('Y', get_pref('dbupdatetime'));
 $now = date('Y', time());
 echo( ((int)$first < (int)$now ? $first.'-'.$now : $now) );
-</txp:php> <txp:site_name />, all rights reserved. <txp:evaluate query='contains("<txp:variable name="socials" />", "twitter")'>Social: <a href="<txp:variable name="twitter_account" />" target="_blank"><svg class="svg-icon" aria-hidden="true" focusable="false" role="img" width="28" height="28" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><switch><g><path d="m18.258 3.266c-0.693 0.405-1.46 0.698-2.277 0.857-0.653-0.686-1.586-1.115-2.618-1.115-1.98 0-3.586 1.581-3.586 3.53 0 0.276 0.031 0.545 0.092 0.805-2.981-0.148-5.624-1.553-7.393-3.689-0.309 0.522-0.486 1.127-0.486 1.775 0 1.224 0.633 2.305 1.596 2.938-0.587-0.018-1.141-0.177-1.625-0.442-1e-3 0.015-1e-3 0.029-1e-3 0.045 0 1.71 1.237 3.138 2.877 3.462-0.301 0.08-0.617 0.123-0.945 0.123-0.23 0-0.456-0.021-0.674-0.062 0.456 1.402 1.781 2.422 3.35 2.451-1.228 0.947-2.773 1.512-4.454 1.512-0.291 0-0.575-0.016-0.855-0.049 1.588 1 3.473 1.586 5.498 1.586 6.598 0 10.205-5.379 10.205-10.045 0-0.153-3e-3 -0.305-0.01-0.456 0.7-0.499 1.308-1.12 1.789-1.827-0.644 0.28-1.334 0.469-2.06 0.555 0.741-0.438 1.309-1.129 1.577-1.954" fill="#1da1f2"></path></g><foreignObject width="0" height="0" overflow="hidden">Twitter</foreignObject></switch></svg></a></txp:evaluate>
+</txp:php> <txp:site_name />, all rights reserved. <txp:evaluate query='contains("<txp:variable name="socials" />", "twitter")'>Follow us: <a href="<txp:variable name="twitter_account" />" target="_blank"><svg class="svg-icon" aria-hidden="true" focusable="false" role="img" width="28" height="28" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><switch><g><path d="m18.258 3.266c-0.693 0.405-1.46 0.698-2.277 0.857-0.653-0.686-1.586-1.115-2.618-1.115-1.98 0-3.586 1.581-3.586 3.53 0 0.276 0.031 0.545 0.092 0.805-2.981-0.148-5.624-1.553-7.393-3.689-0.309 0.522-0.486 1.127-0.486 1.775 0 1.224 0.633 2.305 1.596 2.938-0.587-0.018-1.141-0.177-1.625-0.442-1e-3 0.015-1e-3 0.029-1e-3 0.045 0 1.71 1.237 3.138 2.877 3.462-0.301 0.08-0.617 0.123-0.945 0.123-0.23 0-0.456-0.021-0.674-0.062 0.456 1.402 1.781 2.422 3.35 2.451-1.228 0.947-2.773 1.512-4.454 1.512-0.291 0-0.575-0.016-0.855-0.049 1.588 1 3.473 1.586 5.498 1.586 6.598 0 10.205-5.379 10.205-10.045 0-0.153-3e-3 -0.305-0.01-0.456 0.7-0.499 1.308-1.12 1.789-1.827-0.644 0.28-1.334 0.469-2.06 0.555 0.741-0.438 1.309-1.129 1.577-1.954" fill="#1da1f2"></path></g><foreignObject width="0" height="0" overflow="hidden">Twitter</foreignObject></switch></svg></a></txp:evaluate>
 <txp:evaluate query='contains("<txp:variable name="socials" />", "instagram")'><a href="<txp:variable name="instagram_account" />" target="_blank"><svg class="svg-icon" aria-hidden="true" focusable="false" role="img" width="28" height="28" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><switch><g><defs><linearGradient id="grad1" x1="10%" y1="20%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1400c8"></stop><stop offset="25%" style="stop-color:#ba00b1"></stop><stop offset="100%" style="stop-color:#fcaf45"></stop></linearGradient></defs><path d="M17.946 5.29a6.606 6.606 0 0 0-.418-2.185 4.412 4.412 0 0 0-1.039-1.594A4.412 4.412 0 0 0 14.895.472a6.606 6.606 0 0 0-2.184-.418C11.75.01 11.444 0 9 0S6.25.01 5.29.054a6.606 6.606 0 0 0-2.185.418A4.412 4.412 0 0 0 1.51 1.511 4.412 4.412 0 0 0 .472 3.105a6.606 6.606 0 0 0-.418 2.184C.01 6.25 0 6.556 0 9s.01 2.75.054 3.71a6.606 6.606 0 0 0 .418 2.185 4.412 4.412 0 0 0 1.039 1.594 4.411 4.411 0 0 0 1.594 1.039 6.606 6.606 0 0 0 2.184.418C6.25 17.99 6.556 18 9 18s2.75-.01 3.71-.054a6.606 6.606 0 0 0 2.185-.418 4.602 4.602 0 0 0 2.633-2.633 6.606 6.606 0 0 0 .418-2.184C17.99 11.75 18 11.444 18 9s-.01-2.75-.054-3.71zm-1.62 7.347a4.978 4.978 0 0 1-.31 1.67 2.98 2.98 0 0 1-1.708 1.709 4.979 4.979 0 0 1-1.671.31c-.95.043-1.234.052-3.637.052s-2.688-.009-3.637-.052a4.979 4.979 0 0 1-1.67-.31 2.788 2.788 0 0 1-1.036-.673 2.788 2.788 0 0 1-.673-1.035 4.978 4.978 0 0 1-.31-1.671c-.043-.95-.052-1.234-.052-3.637s.009-2.688.052-3.637a4.979 4.979 0 0 1 .31-1.67 2.788 2.788 0 0 1 .673-1.036 2.788 2.788 0 0 1 1.035-.673 4.979 4.979 0 0 1 1.671-.31c.95-.043 1.234-.052 3.637-.052s2.688.009 3.637.052a4.979 4.979 0 0 1 1.67.31 2.788 2.788 0 0 1 1.036.673 2.788 2.788 0 0 1 .673 1.035 4.979 4.979 0 0 1 .31 1.671c.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637zM9 4.378A4.622 4.622 0 1 0 13.622 9 4.622 4.622 0 0 0 9 4.378zM9 12a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm5.884-7.804a1.08 1.08 0 1 1-1.08-1.08 1.08 1.08 0 0 1 1.08 1.08z" fill="url(#grad1)"></path></g><foreignObject width="0" height="0" overflow="hidden">Instagram</foreignObject></switch></svg></a></txp:evaluate>
 <txp:evaluate query='contains("<txp:variable name="socials" />", "facebook")'><a href="<txp:variable name="facebook_account" />" target="_blank"><svg class="svg-icon" aria-hidden="true" focusable="false" role="img" width="28" height="28" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><switch><g><path d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z" fill="#1778f2"></path></g><foreignObject width="0" height="0" overflow="hidden">Facebook</foreignObject></switch></svg></a></txp:evaluate>
 <txp:evaluate query='contains("<txp:variable name="socials" />", "dribbble")'><a href="<txp:variable name="dribbble_account" />" target="_blank"><svg class="svg-icon" aria-hidden="true" focusable="false" role="img" width="28" height="28" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><switch><g><path d="m10 2.531c-4.125 0-7.469 3.344-7.469 7.469s3.344 7.469 7.469 7.469 7.469-3.344 7.469-7.469-3.344-7.469-7.469-7.469m0 1.245c1.48 0 2.84 0.519 3.908 1.384-1.009 0.811-2.111 1.512-3.298 2.066-0.696-1.154-1.533-2.209-2.47-3.167 0.588-0.183 1.212-0.283 1.86-0.283m-3.097 0.83c0.962 0.93 1.82 1.969 2.53 3.112-1.726 0.646-3.584 1.016-5.531 1.032 0.362-1.774 1.48-3.269 3.001-4.144m-3.127 5.394c2.219 0 4.338-0.418 6.29-1.175 0.209 0.404 0.405 0.813 0.579 1.236-2.147 0.805-3.953 2.294-5.177 4.195-1.047-1.113-1.692-2.608-1.692-4.256m6.224 6.224c-1.337 0-2.572-0.426-3.586-1.143 1.079-1.748 2.709-3.119 4.659-3.853 0.483 1.488 0.755 3.071 0.784 4.714-0.586 0.183-1.211 0.282-1.857 0.282m3.075-0.817c-0.072-1.577-0.342-3.103-0.806-4.542 0.673-0.154 1.369-0.243 2.087-0.243 0.621 0 1.22 0.085 1.807 0.203-0.261 1.966-1.435 3.64-3.088 4.582m1.281-6.029c-0.868 0-1.708 0.116-2.515 0.313-0.188-0.464-0.396-0.917-0.621-1.359 1.294-0.612 2.492-1.387 3.587-2.284 0.798 0.97 1.302 2.187 1.395 3.517-0.6-0.11-1.212-0.187-1.846-0.187" fill="#e94c88"></path></g><foreignObject width="0" height="0" overflow="hidden">Dribbble</foreignObject></switch></svg></a></txp:evaluate>
@@ -625,9 +460,8 @@ function _encode_email($e) {
 	return $output;
 }
 </txp:php>
-<txp:authors group="publisher, managing_editor" break="" limt="1">
-<txp:variable name="email_encoded" value='<txp:php> echo _encode_email(author_email(array())); </txp:php>' />
-</txp:authors>
+
+<txp:variable name="email_encoded" value='<txp:php> echo _encode_email("info@closmirabel.com"); </txp:php>' />
 
 <div role="dialog" aria-modal="true" aria-haspopup="true" aria-label="Dialog Window - Close (Press escape to close)" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openContact" onclick="document.getElementById('openContact').style.display='none';return true;" hidden><div role="document" class="modal no-select"><span class="close-span"><strong>Close</strong> <a rel="noopener noreferrer" href="#close-modal?javascript:void(0);" role="button" aria-hidden="true" aria-label="Close (Press escape to close)" class="close" id="close-modal" onclick="document.getElementById('openContact').style.display='none';return true;"><svg aria-hidden="true" aria-labelledby="close-share" width="20" height="20" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="vertical-align:top"><switch><g><title id="close-share">Close</title><path d="m15.125 12.281l-2.8438 2.8438 9.9375 9.875-9.9375 9.875 2.8438 2.8438 9.9375-9.875 9.9375 9.875 2.8125-2.8438-9.9062-9.875 9.9062-9.875-2.8125-2.8438-9.9375 9.875z" fill="currentColor"></path></g><foreignObject width="0" height="0"><b>×</b></foreignObject></switch></svg></a></span> <div class="header-modal"><strong class="no-select" id="dialog-description">Compose new email<b class="colon">:</b></strong></div> <div class="inner-dialog" role="document"><p class="txt-c"> <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=<txp:variable name="email_encoded" />&amp;su=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Gmail" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Gmail</a> <a href="https://outlook.office.com/owa/?path=/mail/action/compose&amp;to=<txp:variable name="email_encoded" />&amp;subject=&amp;body=" class="tooltip" target="_blank" data-tooltip="Outlook" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Outlook</a> <a href="mailto:<txp:variable name="email_encoded" />?subject=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Default" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.564 2.703l3.45 3.734-2.434 4.798 5.14-.921 2.34 5.646L24 2.926 5.564 2.703zm-.636 8.088l.957-.787-1.234.39-.126-.18.51-.495-.669.27C1.813 10.979 0 13.455 0 16.35c0 1.951.822 3.705 2.133 4.947-.563-.99-.885-2.134-.885-3.355 0-2.865 1.809-5.415 4.315-6.42l.315-.766-.75.331-.211-.285.011-.011zm4.364-1.97L10.89 6l9.398-2.201L9.292 8.821z" fill="currentColor"></path></svg> Default</a></p></div>  </div>  </div>
 
