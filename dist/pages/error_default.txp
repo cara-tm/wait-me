@@ -2,7 +2,7 @@
 Your image extension for the file "0":
 </txp:hide>
 
-<txp:variable name="img-ext" value="png" />
+<txp:variable name="img_ext" value="png" />
 
 <txp:hide>
 A list of social network names to use (lowercases, no comma separated, a space instead; remove all and replace by 2 spaces to hide the social link):
@@ -37,7 +37,7 @@ The main text of your page:
 Text before the contact link:
 </txp:hide>
 
-<txp:variable name="prefix-contact" value="Keep in touch" />
+<txp:variable name="prefix_contact" value="Keep in touch" />
 
 <txp:hide>
 Text in the contact link:
@@ -58,7 +58,7 @@ Do not change anything below
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 <title><txp:site_name /> - Maintenance Mode</title>
-<meta name="robots" content="none">
+<meta name="robots" content="none,noarchive,nocache,noimageindex,nosnippet">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#ffffff">
@@ -109,8 +109,8 @@ src: local('Abril Fatface'), local('AbrilFatface-Regular'),
 	url('https://fonts.gstatic.com/s/abhayalibre/v5/e3tmeuGtX-Co5MNzeAOqinEQfEnT.eot?#iefix') format('embedded-opentype'),
 	url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2') format('woff2'),
 	url('https://fonts.gstatic.com/s/abrilfatface/v11/zOL64pLDlL1D99S8g8PtiKchq-dmiw.woff') format('woff'),
-	url('https://fonts.gstatic.com/s/abhayalibre/v5/e3tmeuGtX-Co5MNzeAOqinEQfEnS.ttf')  format('truetype'),
-	url('https://fonts.gstatic.com/l/font?kit=e3tmeuGtX-Co5MNzeAOqinEQfEnQ&skey=4aba808beb02377b&v=v5#AbhayaLibre') format('svg');
+	url('https://fonts.gstatic.com/s/abhayalibre/v5/e3tmeuGtX-Co5MNzeAOqinEQfEnS.ttf') format('truetype'),
+	url('https://fonts.gstatic.com/l/font?kit=e3tmeuGtX-Co5MNzeAOqinEQfEnQ&skey=4aba808beb02377b&v=v5#AbhayaLibre') format('svg')
 }
 
 *,
@@ -129,6 +129,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
+	text-align: center;
 	font-family: '-apple-system',system-ui,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 	font-kerning:normal;-moz-font-feature-settings:"kern";-webkit-font-feature-settings:"kern";font-feature-settings:"kern";
 	scroll-behavior: smooth
@@ -153,19 +154,15 @@ a {color: #333}
 button,
 .button {
 	display: inline-table;
-	padding: 0;
-	vertical-align: middle;
-	text-decoration: none
-}
-
-button,
-.button {
-	padding: .2em .5em .4em;
+	display: inline-block;
+	padding: .2em .5em .3em;
 	background: #322fd0;
 	border: 0;
 	border:1px solid rgba(27, 31, 35, 0.2);
+	vertical-align: baseline;
+	text-decoration: none;
 	color: #fff;
-	line-height: 1.6;
+	font-family: Arial, sans-serif;
 	border-radius: 3px
 }
 
@@ -176,13 +173,15 @@ button::-moz-focus-inner,
 	position: relative;
 	top: 0;
 	width: 90%;
+	width: calc(90% + 1vw);
+	max-width: 120em;
 	height: 500px;
-	max-width: 95em;
 	margin: 5% auto 2em auto;
 	*margin: 2em auto 2em auto;
 	border: 1px solid #eee;
 	border: 0px solid rgba(255, 255, 255, 0);
 	background: #fff;
+	text-align: left;
 	/* For IE 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#dddddd')";
 	/* For IE 5.5 - 7 */
@@ -209,7 +208,7 @@ button::-moz-focus-inner,
 	width: 30%;
 	min-width: 30%;
 	height: 100%;
-	background-image:url(images/0.<txp:variable name="img-ext" />);
+	background-image:url(images/0.<txp:variable name="img_ext" />);
 	background-position: right center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -300,7 +299,7 @@ button::-moz-focus-inner,
 
 	.aside .mask {
 		z-index: -1;
-		background-image:url(images/0.<txp:variable name="img-ext" />);
+		background-image:url(images/0.<txp:variable name="img_ext" />);
 		background-position: right center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -364,7 +363,17 @@ button::-moz-focus-inner,
 /*! Just because Safari Mac is ugly */
 @media not all and (min-resolution:.001dpcm) { @media {
 
-	html .aside .mask {background: transparent;-webkit-filter: blur(0px);filter: blur(0px)}
+	html .aside .mask {
+		top: 0;
+		left: 0;
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		background: transparent;
+		box-shadow: 15px 25px 25px -5px rgba(0, 0, 0, 0.11), 13px -15px 25px 0px rgba(0, 0, 0, 0.11);
+		-webkit-filter: blur(0px);
+		filter: blur(0px)
+	}
 }}
 
 h1, h2, h3 {font-family: 'Abril Fatface', serif}
@@ -389,7 +398,7 @@ h2 {
 
 .socials {display: block; margin: 2em 0}
 
-.socials a {vertical-align: text-bottom}
+.socials a {vertical-align: text-bottom; text-decoration: none}
 
 .svg-icon {
 	margin: 0 .35em 0 0;
@@ -406,7 +415,7 @@ h2 {
 
 }
 
-body .modal-dialog{font:normal normal normal 16px/1 Arial,"Helvetica Neue",Helvetica,sans-serif}@-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}.modal-dialog:target {opacity:1;display:block;cursor:zoom-out;pointer-events:auto}.modal-dialog:target .modal {opacity:1;-webkit-animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both;animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both}html .modal-dialog:target ~ .wrapper,a[class^="close"]:target ~ .wrapper{overflow:auto;position:absolute;z-index:-1;top:0;left:0;height:1px;margin:0;padding:0}#close:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {position:static}.modal-dialog{display:none;opacity:0;position:absolute;position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;height:0;background:#fff}@supports(display:flex){html .modal-dialog:target ~ .wrapper{overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;height:100vh}.modal-dialog{height:auto;transition:opacity 300ms ease}}html .modal-dialog.no--bg:target ~ .wrapper{height:0}.modal-dialog .modal{overflow:hidden;overflow:-moz-hidden-unscrollable;position:relative;z-index:1000;width:98%;max-width:36em;min-width:250px;margin:1.5% auto;margin:5vh auto;background:#fff;border:1px solid transparent;border-color:hsl(0, 0%, 93.3%);font-size:100%;-webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);-moz-box-shadow:0 0 30px rgba(0,0,0,.3);-o-box-shadow:0 0 10px rgba(0,0,0,.3);-khtml-box-shadow:0 0 10px rgba(0,0,0,.3);-ms-box-shadow:0 0 10px rgba(0,0,0,.3);box-shadow:0 -10px 17px rgba(0,0,0,.05),0 15px 17px rgba(0,0,0,.05),10px 5px 17px rgba(0,0,0,.05);-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);*zoom:1}.modal-dialog:target {outline:none}.modal-dialog .close-span{float:right;position:relative;top:1.2em;right:0;margin:0 3em 0 0;color:inherit;font-size:smaller;font-weight:300}.modal-dialog .close{box-sizing:content-box;display:block;position:absolute;z-index:10000;top:-.3em;right:-2em;width:1.5em;height:1.5em;margin:0;padding:0;border:2px solid currentcolor;vertical-align:middle;align-self:center;text-align:center;text-decoration:none;line-height:1.5em}.modal-dialog .close strong{display:block;width:1.5em;height:1.5em;margin:0;padding:0;vertical-align:middle;line-height:1.5em;font-weight:400;cursor:pointer}.modal-dialog .close:hover,.inner-dialog .close:active{outline:none;border:none;-webkit-tap-highlight-color:transparent}.modal-dialog .close b{display:block;overflow:hidden;position:absolute;z-index: 10000;top:0;right:0;bottom:0;left:0;width:100%;margin:0;padding:0;vertical-align:middle;text-align:center;color: #333;font-size:100%;cursor:pointer;-webkit-animation:1s ease-in-out;-moz-animation:1s ease-in-out;animation:1s ease-in-out}.modal-dialog .close b:hover,.modal-dialog .close:hover svg{-webkit-transform:scale(2,2);-moz-transform:scale(2,2);transform:scale(2,2)}.modal-dialog .header-modal{position:relative;z-index:1001;display:block;width:100%;height:4em;min-height:4rem;max-height:26vh;color:inherit;font-family:Arial,'Noto Sans',sans-serif;font-weight:300}.header-modal strong{display:block;float:left;width:90%;margin:1em 5% 0;text-align:center;letter-spacing:-1px;text-transform:capitalize;line-height:1;font-size:110%;font-weight:400}.modal-dialog .inner-dialog{overflow-y:auto;display:block;width:auto;max-height:14em;max-height:47vh;height:99%;margin:0;padding:5px 15px 30px 20px;color:inherit;-webkit-overflow-scrolling:touch}.modal-dialog .inner-dialog p{margin-top:2em;text-align:center;font-size:85%;line-height:1.5;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}.modal-dialog .inner-dialog p a{display:inline-table;width:48px;height:auto;margin:1em .5em 1em;padding:.5em;background:inherit;border:2px solid #f0f8ff}@media only screen and (max-width:520px),only screen and (max-height:350px){.modal-dialog:target{height:calc(100vh + 10vh + 70px)}.modal-dialog{position:absolute}}@media only screen and (max-width:720px){.modal-dialog .modal {width:80%}.header-modal{max-height:11vmax}.header-modal h3{font-size:80%;line-height:1}html .header-modal span {width:auto;margin:0}.header-modal a{float:none;width:24px;height:24px;margin:0 0 0 .5em;vertical-align:middle}.header-modal svg{width:22px;height:22px;vertical-align:baseline}.modal-dialog .modal{margin:5vh auto;margin:calc(15vh - 40px) auto;margin:5vmin auto}}:-o-prefocus,html .modal-dialog .inner-dialog{height:100%;max-height:100%}
+body .modal-dialog{font:normal normal normal 16px/1 Arial,"Helvetica Neue",Helvetica,sans-serif}@-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}to{-webkit-transform:scale(1);transform:scale(1)}}.modal-dialog:target {opacity:1;display:block;cursor:zoom-out;pointer-events:auto}.modal-dialog:target .modal {opacity:1;-webkit-animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both;animation:scale-up-center .1s cubic-bezier(.39,.575,.565,1) both}html .modal-dialog:target ~ .wrapper,a[class^="close"]:target ~ .wrapper{overflow:auto;position:absolute;z-index:-1;top:0;left:0;height:1px;margin:0;padding:0}#close:target ~ .wrapper,a[class^="close"]:target ~ .wrapper {position:static}.modal-dialog{display:none;opacity:0;position:absolute;position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;height:0;background:#fff}@supports(display:flex){html .modal-dialog:target ~ .wrapper{overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;height:100vh}.modal-dialog{height:auto;transition:opacity 300ms ease}}html .modal-dialog.no--bg:target ~ .wrapper{height:0}.modal-dialog .modal{overflow:hidden;overflow:-moz-hidden-unscrollable;position:relative;z-index:1000;width:98%;max-width:36em;min-width:250px;margin:1.5% auto;margin:5vh auto;background:#fff;border:1px solid transparent;border-color:hsl(0, 0%, 93.3%);font-size:100%;-webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);-moz-box-shadow:0 0 30px rgba(0,0,0,.3);-o-box-shadow:0 0 10px rgba(0,0,0,.3);-khtml-box-shadow:0 0 10px rgba(0,0,0,.3);-ms-box-shadow:0 0 10px rgba(0,0,0,.3);box-shadow:0 -10px 17px rgba(0,0,0,.05),0 15px 17px rgba(0,0,0,.05),10px 5px 17px rgba(0,0,0,.05);-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);*zoom:1}.modal-dialog:target {outline:none}.modal-dialog .close-span{float:right;position:relative;top:1.2em;right:0;margin:0 3em 0 0;color:inherit;font-size:smaller;font-weight:300}.modal-dialog .close{box-sizing:content-box;display:block;position:absolute;z-index:10000;top:-.3em;right:-2em;width:1.5em;height:1.5em;margin:0;padding:0;border:2px solid currentcolor;vertical-align:middle;align-self:center;text-align:center;text-decoration:none;line-height:1.5em}.modal-dialog .close strong{display:block;width:1.5em;height:1.5em;margin:0;padding:0;vertical-align:middle;line-height:1.5em;font-weight:400;cursor:pointer}.modal-dialog .close:hover,.inner-dialog .close:active{outline:none;border:none;-webkit-tap-highlight-color:transparent}.modal-dialog .close b{display:block;overflow:hidden;position:absolute;z-index: 10000;top:0;right:0;bottom:0;left:0;width:100%;margin:0;padding:0;vertical-align:middle;text-align:center;color: #333;font-size:100%;cursor:pointer;-webkit-animation:1s ease-in-out;-moz-animation:1s ease-in-out;animation:1s ease-in-out}.modal-dialog .close b:hover,.modal-dialog .close:hover svg{-webkit-transform:scale(2,2);-moz-transform:scale(2,2);transform:scale(2,2)}.modal-dialog .header-modal{position:relative;z-index:1001;display:block;width:100%;height:4em;min-height:4rem;max-height:26vh;color:inherit;font-family:Arial,'Noto Sans',sans-serif;font-weight:300}.header-modal strong{display:block;float:left;width:90%;margin:1em 5% 0;text-align:center;letter-spacing:-1px;text-transform:capitalize;line-height:1;font-size:110%;font-weight:400}.modal-dialog .inner-dialog{overflow-y:auto;display:block;width:auto;max-height:14em;max-height:47vh;height:99%;margin:0;padding:5px 15px 30px 20px;color:inherit;-webkit-overflow-scrolling:touch}.modal-dialog .inner-dialog p{margin-top:2em;text-align:center;font-size:85%;line-height:1.5;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}.modal-dialog .inner-dialog p a{display:inline-table;width:80px;height:auto;margin:1em .5em 1em;padding:.5em;background:inherit;border:2px solid #f0f8ff;hyphens:none}.modal-dialog p a strong{display:block;font-weight:normal}@media only screen and (max-width:520px),only screen and (max-height:350px){.modal-dialog:target{height:calc(100vh + 10vh + 70px)}.modal-dialog{position:absolute}}@media only screen and (max-width:720px){.modal-dialog .modal{width:80%}.header-modal{max-height:11vmax}.header-modal h3{font-size:80%;line-height:1}html .header-modal span{width:auto;margin:0}.header-modal a{float:none;width:24px;height:24px;margin:0 0 0 .5em;vertical-align:middle}.header-modal svg{width:22px;height:22px;vertical-align:baseline}.modal-dialog .modal{margin:5vh auto;margin:calc(15vh - 40px) auto;margin:5vmin auto}}:-o-prefocus,html .modal-dialog .inner-dialog{height:100%;max-height:100%}
 
 </style>
 
@@ -427,7 +436,7 @@ body .modal-dialog{font:normal normal normal 16px/1 Arial,"Helvetica Neue",Helve
 
 				<h1><txp:variable name="title" /></h1>
 				<p><txp:variable name="text" /></p>
-				<p><txp:variable name="prefix-contact" /> <a href="#openContact" aria-label="contact" class="button" onclick="document.getElementById('openContact').style.display='block';return true;" aria-haspopup="true"><txp:variable name="contact" /></a></p>
+				<p><txp:variable name="prefix_contact" /> <a href="#openContact" aria-label="contact" class="button" onclick="document.getElementById('openContact').style.display='block';return true;" aria-haspopup="true"><txp:variable name="contact" /></a></p>
 
 				<footer class="footer">
 <span class="socials">&copy; <txp:php>
@@ -463,6 +472,6 @@ function _encode_email($e) {
 
 <txp:variable name="email_encoded" value='<txp:php> echo _encode_email("info@closmirabel.com"); </txp:php>' />
 
-<div role="dialog" aria-modal="true" aria-haspopup="true" aria-label="Dialog Window - Close (Press escape to close)" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openContact" onclick="document.getElementById('openContact').style.display='none';return true;" hidden><div role="document" class="modal no-select"><span class="close-span"><strong>Close</strong> <a rel="noopener noreferrer" href="#close-modal?javascript:void(0);" role="button" aria-hidden="true" aria-label="Close (Press escape to close)" class="close" id="close-modal" onclick="document.getElementById('openContact').style.display='none';return true;"><svg aria-hidden="true" aria-labelledby="close-share" width="20" height="20" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="vertical-align:top"><switch><g><title id="close-share">Close</title><path d="m15.125 12.281l-2.8438 2.8438 9.9375 9.875-9.9375 9.875 2.8438 2.8438 9.9375-9.875 9.9375 9.875 2.8125-2.8438-9.9062-9.875 9.9062-9.875-2.8125-2.8438-9.9375 9.875z" fill="currentColor"></path></g><foreignObject width="0" height="0"><b>×</b></foreignObject></switch></svg></a></span> <div class="header-modal"><strong class="no-select" id="dialog-description">Compose new email<b class="colon">:</b></strong></div> <div class="inner-dialog" role="document"><p class="txt-c"> <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=<txp:variable name="email_encoded" />&amp;su=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Gmail" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Gmail</a> <a href="https://outlook.office.com/owa/?path=/mail/action/compose&amp;to=<txp:variable name="email_encoded" />&amp;subject=&amp;body=" class="tooltip" target="_blank" data-tooltip="Outlook" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Outlook</a> <a href="mailto:<txp:variable name="email_encoded" />?subject=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Default" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.564 2.703l3.45 3.734-2.434 4.798 5.14-.921 2.34 5.646L24 2.926 5.564 2.703zm-.636 8.088l.957-.787-1.234.39-.126-.18.51-.495-.669.27C1.813 10.979 0 13.455 0 16.35c0 1.951.822 3.705 2.133 4.947-.563-.99-.885-2.134-.885-3.355 0-2.865 1.809-5.415 4.315-6.42l.315-.766-.75.331-.211-.285.011-.011zm4.364-1.97L10.89 6l9.398-2.201L9.292 8.821z" fill="currentColor"></path></svg> Default</a></p></div>  </div>  </div>
+<div role="dialog" aria-modal="true" aria-haspopup="true" aria-label="Dialog Window - Close (Press escape to close)" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openContact" onclick="document.getElementById('openContact').style.display='none';return true;" hidden><div role="document" class="modal no-select"><span class="close-span"><strong>Close</strong> <a rel="noopener noreferrer" href="#close-modal?javascript:void(0);" role="button" aria-hidden="true" aria-label="Close (Press escape to close)" class="close" id="close-modal" onclick="document.getElementById('openContact').style.display='none';return true;"><svg aria-hidden="true" aria-labelledby="close-share" width="20" height="20" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="vertical-align:top"><switch><g><title id="close-share">Close</title><path d="m15.125 12.281l-2.8438 2.8438 9.9375 9.875-9.9375 9.875 2.8438 2.8438 9.9375-9.875 9.9375 9.875 2.8125-2.8438-9.9062-9.875 9.9062-9.875-2.8125-2.8438-9.9375 9.875z" fill="currentColor"></path></g><foreignObject width="0" height="0"><b>×</b></foreignObject></switch></svg></a></span> <div class="header-modal"><strong class="no-select" id="dialog-description">Compose new email<b class="colon">:</b></strong></div> <div class="inner-dialog" role="document"><p class="txt-c"> <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=<txp:variable name="email_encoded" />&amp;su=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Gmail" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> <strong>Gmail</strong></a> <a href="https://outlook.office.com/owa/?path=/mail/action/compose&amp;to=<txp:variable name="email_encoded" />&amp;subject=&amp;body=" class="tooltip" target="_blank" data-tooltip="Outlook" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> <strong>Outlook</strong></a> <a href="mailto:<txp:variable name="email_encoded" />?subject=&amp;cc=&amp;bcc=&amp;body=" class="tooltip" target="_blank" data-tooltip="Default" aria-haspopup="true" role="link"><svg aria-hidden="true" focusable="false" role="img" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.564 2.703l3.45 3.734-2.434 4.798 5.14-.921 2.34 5.646L24 2.926 5.564 2.703zm-.636 8.088l.957-.787-1.234.39-.126-.18.51-.495-.669.27C1.813 10.979 0 13.455 0 16.35c0 1.951.822 3.705 2.133 4.947-.563-.99-.885-2.134-.885-3.355 0-2.865 1.809-5.415 4.315-6.42l.315-.766-.75.331-.211-.285.011-.011zm4.364-1.97L10.89 6l9.398-2.201L9.292 8.821z" fill="currentColor"></path></svg> <strong>Default</strong></a></p></div>  </div>  </div>
 
 </body></html>
