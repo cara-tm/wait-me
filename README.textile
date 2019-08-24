@@ -10,9 +10,9 @@ p. Fine handcrafted theme for your maintenance mode during your website developm
 
 h2. How to?
 
-p. Unzip the distribution and place the theme folder into your @/root/themes@ directory.
+p. Unzip the distribution and place the theme folder @wait-me@ into your @/root/themes@ directory.
 
-p. Upload an image named 0.jpg in your @/root/images@ directory (dimensions: 350 × 500 px).
+p. Upload an image of your choice, that must be named @0@, into your @/root/images@ directory (dimensions: 350 × 500 px). This will be the image that is displayed with the main page; set the extension image file with the corresponding TXP variable into the pages. To support the "Retina Display" screens, please download the same image of twice the size and named <code>0@2x</code> with the same file extension.
 
 p. The theme use only 2 pages: "default" and "error_default" where you could find some TXP variables to set accordingly to your needs. Finaly, activate it.
 
