@@ -1,0 +1,83 @@
+<txp:hide>
+A list of social network names to use (lowercases, no comma separated, a space instead; remove all and replace by 2 spaces to hide the social link):
+</txp:hide>
+
+<txp:variable name="socials" value="twitter instagram mastodon tiktok facebook linkedin dribbble github youtube" />
+
+<txp:hide>
+And the corresponding social accounts (no comma separated, a space instead):
+</txp:hide>
+
+<txp:variable name="twitter_account" value="https://twitter.com/lowel" />
+<txp:variable name="instagram_account" value="https://instagram.com/rodinature" />
+<txp:variable name="facebook_account" value="https://www.fb.com/zuck" />
+<txp:variable name="dribbble_account" value="https://dribbble.com" />
+<txp:variable name="linkedin_account" value="https://linkedin.com" />
+<txp:variable name="github_account" value="https://github.com/cara-tm/wait-me" />
+<txp:variable name="youtube_account" value="https://youtu.be/zpurVcrhY30" />
+<txp:variable name="mastodon_account" value="https://mastodon.social/@Gargron" />
+<txp:variable name="tiktok_account" value="https://www.tiktok.com" />
+
+
+<txp:hide>
+The main title of your page:
+</txp:hide>
+
+<txp:variable name="title" value="This website is under development" />
+
+<txp:hide>
+The main text of your page:
+</txp:hide>
+
+<txp:variable name="text" value="We're working hard on this new website but all isn't finished yet. Please, renew your visit later." />
+
+<txp:hide>
+The "Follow us" text:
+</txp:hide>
+
+<txp:variable name="follow" value="Follow us" />
+
+<txp:hide>
+Text before the contact link:
+</txp:hide>
+
+<txp:variable name="prefix_contact" value="Keep in touch" />
+
+<txp:hide>
+Text in the contact link:
+</txp:hide>
+
+<txp:variable name="contact" value="Contact us" />
+
+<txp:hide>
+Title into the Modal Box:
+</txp:hide>
+<txp:variable name="new_email" value="Compose new email" />
+
+<txp:hide>
+Your brand displayed after the footer's page; leave blank if you don't want it:
+</txp:hide>
+
+<txp:variable name="branding" value="wait me theme" />
+
+<txp:hide>
+Retrieve the administrator's email. Can be changed, see below:
+</txp:hide>
+
+<txp:authors group="publisher, managing_editor" break="" limt="1">
+<txp:php>
+global $variable;
+/**
+ * Simple email address obfuscator
+ */
+function _encode_email($e) {
+	for ($i = 0; $i < strlen($e); $i++) {
+		$output .= '&#'.ord($e[$i]).';';
+	}
+	return $output;
+}
+/* Can be changed explicitly: 
+$variable['email_encoded'] = _encode_email('recipient@example.com');
+*/
+$variable['email_encoded'] = _encode_email(author_email(array())); </txp:php>
+</txp:authors>

@@ -2,15 +2,28 @@ h1. Wait Me
 
 *Wait Me*: a maintenance theme for Textpattern CMS.
 
-!https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/wait-me_textpattern-theme.png!
+!https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/presentation.jpg!
 
-p{width:100%;text-align:right;font-size:small}. _Illustration: courtesy (C) Chu Son (@sonctw), Unsplash.com_.
+p{width:100%;text-align:right;font-size:small}. _Illustration: courtesy © Unsplash.com_.
 
 p. Fine handcrafted theme for your maintenance mode during your website development. Includes specific headers to search engine bots in order to differ indexations in later revisits. Minimal design with extremly subtile colored shadows around the custom picture (extracted from the image itself); additional text, social network links and contact links governed by TXP variables for immediat use. No javascript, no dependencies, Responsive with Flexbox inside for modern browsers and IE7 minimum capable!
+
+p. Include the ability to display social network links (optional) from 9 flavors: Twitter, Facebook, Instagram, Mastodon, Tik Tok, Dribbble, LinkedIn, GitHub and YouTube. Include a possibility to send e-mails with the use of the major online solutions (Gmail, Outlook, Yahoo! or local system) from a Modal Box.
+
 
 h2. How to?
 
 p. Unzip the distribution and place the theme folder @wait-me@ into your @/root/themes@ directory.
+
+p. Place the @fonts@ folder (and its content) into your @/root/@ directory (optional).
+
+h3. Version 2.4 (onward):
+
+p. Upload an image of your choice from the Textpattern "Images" panel (dimensions: 350 × 500 px). This will be the image that is displayed with the main page; because Textpattern do not offer by default a simple method to support "Retina Display", upload an alternate image copy of that image (2 x in sizes) into your @/images@ directory it must be named <code>1@2x</code> with the same file extension as the one uploaded from the "Images" panel.
+
+p. This theme use only 2 page models (@default@ and @error_default@) and only one form model: @config@. The @config@ form is used to store all informations to customise your maintenance website from TXP variables. Set it accordingly to your needs (all variables are commented). 
+
+h3. Older versions:
 
 p. Upload an image of your choice, that must be named @0@, into your @/root/images@ directory (dimensions: 350 × 500 px). This will be the image that is displayed with the main page; set the extension image file with the corresponding TXP variable into the pages. To support the "Retina Display" screens, please download the same image of twice the size and named <code>0@2x</code> with the same file extension.
 
