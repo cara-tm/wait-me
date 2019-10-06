@@ -10,6 +10,8 @@ p. Fine handcrafted theme for your maintenance mode during your website developm
 
 p. Include the ability to display social network links (optional) from 9 flavors: Twitter, Facebook, Instagram, Mastodon, Tik Tok, Dribbble, LinkedIn, GitHub and YouTube. Include a possibility to send e-mails with the use of the major online solutions (Gmail, Outlook, Yahoo! or local system) from a Modal Box.
 
+!https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/iphone.jpg!
+
 
 h2. How to?
 
