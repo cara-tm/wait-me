@@ -328,6 +328,14 @@ echo image_url(array());
 
 }}
 
+/*! Corrects inconsistencies within Safari 9 OSX 'El Capitan': replaces the effect by a simple shadow */
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+
+	.aside {box-shadow:15px 25px 25px -5px rgba(0,0,0,.11), 13px -15px 25px 0px rgba(0,0,0,.11)}
+	.aside .mask{display:none}
+
+}
+
 h1, h2, h3 {
 	color: #304659;
 	font-family: 'Abril Fatface', 'Times New Roman', serif
