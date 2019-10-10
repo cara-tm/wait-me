@@ -393,7 +393,7 @@ h2 {
 
 	html,body {height:100%}
 	html .wrapper {display:block;top: 0; margin-top:5%}
-	html .aside {display: block;width:100%;max-height:100%}
+	html .aside {display: block;width:100%;max-height:100%;max-height:73vh}
 	.section {overflow:hidden;display:block;width: 100%; box-shadow: -5px 4px 25px rgba(0,0,0,.11)}
 	.push,.footer {height:auto}
 	html h1 {letter-spacing: 0}
