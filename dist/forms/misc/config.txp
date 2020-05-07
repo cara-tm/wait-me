@@ -61,7 +61,7 @@ Your brand displayed after the footer's page; leave blank if you don't want it:
 <txp:variable name="branding" value="wait me theme" />
 
 <txp:hide>
-Retrieve the administrator's email. Can be changed, see below:
+Retrieve the administrator's email (or set corresponding integer(s)). Can be changed, see below:
 </txp:hide>
 
 <txp:authors group="publisher, managing_editor" break="" limt="1">
