@@ -44,11 +44,11 @@ font-style:normal;
 font-weight:400;
 font-display:swap;
 src: local('Abril Fatface'), local('AbrilFatface-Regular'),
-url('fonts/abril/abril.eot?#iefix') format('embedded-opentype'),
-url('fonts/abril/abril.woff2') format('woff2'),
-url('fonts/abril/abril.woff') format('woff'),
-url('fonts/abril/abril.ttf') format('truetype'),
-url('fonts/abril/abril.svg') format('svg')
+url('<txp:site_url />fonts/abril/abril.eot?#iefix') format('embedded-opentype'),
+url('<txp:site_url />fonts/abril/abril.woff2') format('woff2'),
+url('<txp:site_url />fonts/abril/abril.woff') format('woff'),
+url('<txp:site_url />fonts/abril/abril.ttf') format('truetype'),
+url('<txp:site_url />fonts/abril/abril.svg') format('svg')
 }
 
 /* @import url(href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap); */
