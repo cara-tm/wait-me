@@ -12,12 +12,17 @@ p. Include the ability to display social network links (optional) from 9 flavors
 
 !https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/iphone.jpg!
 
+h2. *Notice*
+
+*Notice this important advice*: do not forget to associate all your other specific sections (of your new theme in development) to the "Wait Me" theme. Otherwise, public access to inner pages (some may be predictable like a "@/contact@" one) will be allowed for indiscretions.
 
 h2. How to?
 
 p. Unzip the distribution and place the theme folder @wait-me@ into your @/root/themes@ directory.
 
 p. Place the @fonts@ folder (and its content) into your @/root/@ directory (optional).
+
+h3
 
 h3. Version 2.4 (onward):
 
