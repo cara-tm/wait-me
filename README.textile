@@ -22,8 +22,6 @@ p. Unzip the distribution and place the theme folder @wait-me@ into your @/root/
 
 p. Place the @fonts@ folder (and its content) into your @/root/@ directory (optional).
 
-h3
-
 h3. Version 2.4 (onward):
 
 p. Upload an image of your choice from the Textpattern "Images" panel (dimensions: 350 × 500 px). This will be the image that is displayed with the main page; because Textpattern do not offer by default a simple method to support "Retina Display", upload an alternate image copy of that image (2 x in sizes) into your @/images@ directory it must be named <code>1@2x</code> with the same file extension as the one uploaded from the "Images" panel.
