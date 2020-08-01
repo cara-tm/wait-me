@@ -1,6 +1,7 @@
 h1. Wait Me
 
 *Wait Me*: a maintenance theme for Textpattern CMS.
+The omitted theme for websites development without the headache and any consequences on SEO (include a "revisit later" header).
 
 !https://raw.githubusercontent.com/cara-tm/wait-me/master/screenshots/presentation.jpg!
 
